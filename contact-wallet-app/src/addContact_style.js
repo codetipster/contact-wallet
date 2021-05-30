@@ -1,7 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -22,6 +22,6 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-}));
+});
 
-export default useStyles;
+export default withStyles(useStyles, { withTheme: true });

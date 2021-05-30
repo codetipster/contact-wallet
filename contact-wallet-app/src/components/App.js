@@ -1,28 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
 import ContactCard from './ContactCard';
 
 function App() {
-  const contacts = [
-    {
-      id: '1',
-      fullname: 'Samuel Nzekwe',
-      email: 'talk2samuelnzekwe@gmail.com',
-      phone: '07068565502',
-    },
-    {
-      id: '2',
-      fullname: 'Ahuekwe Luke',
-      email: 'talk2LukeAhuekwe@gmail.com',
-      phone: '07068568898902',
-    },
-  ];
+  const [contacts, setContacts] = useState([]);
+
+  const addContactHandler = (contact) => {
+    console.log(contact);
+  };
+
   return (
     <div>
       <Header />
-      <AddContact />
+      <AddContact addContactHandler={addContactHandler} />
       <ContactList contacts={contacts} />
     </div>
   );
