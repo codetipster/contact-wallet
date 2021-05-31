@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ContactCard from './ContactCard';
 
 const ContactList = (props) => {
@@ -8,11 +9,19 @@ const ContactList = (props) => {
 
   const renderContactList = props.contacts.map((contact) => {
     return (
-      <ContactCard
-        contact={contact}
-        clickHandler={deleteContactHandler}
-        key={contact.id}
-      />
+      <div className="container">
+        <h2>
+          My Contacts
+          <Link to="/add">
+            <button className="ui button blue right">Add New Contact</button>
+          </Link>
+        </h2>
+        <ContactCard
+          contact={contact}
+          clickHandler={deleteContactHandler}
+          key={contact.id}
+        />
+      </div>
     );
   });
 
